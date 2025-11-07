@@ -1,0 +1,24 @@
+# Node modules
+node_modules/
+client/node_modules/
+server/node_modules/
+loadgen/node_modules/
+
+# Logs
+logs/
+*.log
+
+# Build outputs
+client/build/
+client/dist/
+server/dist/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+
+# Docker
+*.pid
+*.seed

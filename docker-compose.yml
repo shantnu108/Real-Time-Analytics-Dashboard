@@ -1,0 +1,31 @@
+services:
+  mongo:
+    image: mongo:6.0
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  server:
+    build: ./server
+    restart: unless-stopped
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/realtime
+      - JWT_SECRET=dev-secret
+      - ALLOWED_ORIGINS=*
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongo
+
+  client:
+    build: ./client
+    ports:
+      - "3000:80"
+    depends_on:
+      - server
+
+
+volumes:
+  mongo_data:
