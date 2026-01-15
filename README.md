@@ -27,8 +27,8 @@ Optional (only if you want the load generator to run):
 ### 1) Clone
 
 ```bash
-git clone <YOUR_REPO_URL>
-cd realtime-analytics
+git clone https://github.com/shantnu108/Real-Time-Analytics-Dashboard.git
+cd Real-Time-Analytics-Dashboard
 ```
 
 ### 2) Start Docker manually
